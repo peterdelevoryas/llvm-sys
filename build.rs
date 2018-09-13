@@ -37,7 +37,8 @@ fn main() {
 	cmd.arg("--cxxflags")
 		.arg("--ldflags")
 		.arg("--system-libs")
-		.arg("--libs");
+		.arg("--libs")
+		.arg("x86");
 
 	for arg in output(&mut cmd).split_whitespace() {
 		if arg.starts_with("-l") {

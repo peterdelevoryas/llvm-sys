@@ -17,7 +17,6 @@ cmake --build . --target install
 
 [dependencies.llvm-sys]
 git = "https://github.com/peterdelevoryas/llvm-sys.git"
-rev = "774e6f029db6b414a51df7bf3591db385bdb46eb"
 
 3. Look at auto generated documentation
 
