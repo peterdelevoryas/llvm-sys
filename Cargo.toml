@@ -5,6 +5,9 @@ authors = ["Peter Delevoryas <me@peterdelevoryas.com>"]
 edition = "2018"
 build = "build.rs"
 
+[lib]
+crate-type = ["dylib"]
+
 [dependencies]
 
 [build-dependencies]
