@@ -8,8 +8,3 @@ build = "build.rs"
 [profile.dev]
 debug = false
 lto = false
-
-[dependencies]
-
-[build-dependencies]
-bindgen = "0.40.0"

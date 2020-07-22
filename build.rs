@@ -1,6 +1,3 @@
-use bindgen;
-use std::env;
-use std::path::PathBuf;
 use std::process::{Command, Stdio};
 
 fn link_lib(name: &str) {
@@ -23,16 +20,6 @@ fn output(c: &mut Command) -> String {
 }
 
 fn main() {
-    let bindings = bindgen::Builder::default()
-        .header("llvm.h")
-        .generate()
-        .expect("unable to generate bindings from llvm.h");
-    let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
-    let out_file = out_path.join("llvm.rs");
-    bindings
-        .write_to_file(&out_file)
-        .expect(&format!("unable to writing bindings to {}", out_file.display()));
-
     let mut cmd = Command::new("llvm-config");
     cmd.arg("--libs")
         .arg("core")
@@ -54,6 +41,5 @@ fn main() {
     }
 
     link_lib("c");
-    link_lib("c++");
     link_lib("z");
 }
